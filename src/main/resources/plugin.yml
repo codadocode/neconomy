@@ -1,0 +1,44 @@
+name: NEconomy
+main: br.com.nareba.neconomy.Neconomy
+version: "1.0.0"
+api: ["1.0.5"]
+author: Felipe 'Nareba'
+commands:
+  money:
+    usage: "/money"
+    permission: neconomy.money
+  givemoney:
+    usage: "/givemoney [player] [amount]"
+    permission: neconomy.givemoney
+  takemoney:
+    usage: "/takemoney [player] [amount]"
+    permission: neconomy.takemoney
+  setmoney:
+    usage: "/setmoney [player] [amount]"
+    permission: neconomy.setmoney
+  pay:
+    usage: "/pay [player] [amount]"
+    permission: neconomy.pay
+permissions:
+  neconomy.*:
+    default: false
+    children:
+      neconomy.money:
+      neconomy.money.others:
+      neconomy.givemoney:
+      neconomy.takemoney:
+      neconomy.setmoney:
+      neconomy.pay:
+  neconomy.money:
+    default: true
+    children:
+      neconomy.money.others:
+        default: false
+  neconomy.givemoney:
+    default: false
+  neconomy.takemoney:
+    default: false
+  neconomy.setmoney:
+    default: false
+  neconomy.pay:
+    default: true
